@@ -76,11 +76,14 @@ public class ConstantFolder
     }
 
 	private int tryAllOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen){
+		System.out.println("- Negated Optimization");
 		int negatedOptimizations = Optimizers.negationsOptimizations(listOfInstructions, cpgen);
+		System.out.println("- Arithmetic Optimization");
 		int arithmeticOptimizations = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
-		int comparisonsOptimizations = Optimizers.comparisonsOptimizations(listOfInstructions, cpgen);
-		int arithmeticOptimizations2 = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
-		return negatedOptimizations + arithmeticOptimizations + comparisonsOptimizations + arithmeticOptimizations2; //+ dew + fwd
+		System.out.println("- Comparison Optimization");
+		//int comparisonsOptimizations = Optimizers.comparisonsOptimizations(listOfInstructions, cpgen);
+		//int arithmeticOptimizations2 = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
+		return negatedOptimizations + arithmeticOptimizations;  //+ arithmeticOptimizations2; //+ dew + fwd
 	}
 
 	public void write(String optimisedFilePath)

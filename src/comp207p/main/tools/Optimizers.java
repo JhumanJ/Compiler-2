@@ -190,7 +190,6 @@ public class Optimizers {
                 firstInstruct.setInstruction(newInstruction);
             }
 
-            //Delete other handles
             try {
                 if (found[found.length-1].getInstruction() instanceof IfInstruction) {
                     InstructionHandle tempHandle = (InstructionHandle) ((BranchInstruction)comparInstruc.getInstruction()).getTarget().getPrev();
@@ -207,7 +206,8 @@ public class Optimizers {
                     listOfInstructions.delete(found[1], found[found.length-1]);
                 }
             } catch (TargetLostException e) {
-                e.printStackTrace();
+                System.out.println("----------------- Error when deleting -----------------");
+
             }
 
             optimizationsDone++; //Optimisation found
@@ -249,6 +249,7 @@ public class Optimizers {
             String actualInstructionType = ((TypedInstruction)actualInstruction).getType(cpgen).getSignature();
 
             Number value,negatedValue;
+
             if(actualInstruction instanceof LoadInstruction) {
                 value = Helpers.loadInstructVal(negatedInstruction, cpgen, listOfInstructions, actualInstructionType);
             } else {
