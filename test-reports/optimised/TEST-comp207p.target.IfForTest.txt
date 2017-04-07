@@ -1,4 +1,0 @@
-Testsuite: comp207p.target.IfForTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0,018 sec
-
-Testcase: testFoo took 0,002 sec
