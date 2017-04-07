@@ -80,10 +80,10 @@ public class ConstantFolder
 		int negatedOptimizations = Optimizers.negationsOptimizations(listOfInstructions, cpgen);
 		System.out.println("- Arithmetic Optimization");
 		int arithmeticOptimizations = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
-		//System.out.println("- Comparison Optimization");
-		//int comparisonsOptimizations = Optimizers.comparisonsOptimizations(listOfInstructions, cpgen);
-		//System.out.println("- Arithmetic Optimization2");
-		//int arithmeticOptimizations2 = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
+		System.out.println("- Comparison Optimization");
+		int comparisonsOptimizations = Optimizers.comparisonsOptimizations(listOfInstructions, cpgen);
+		System.out.println("- Arithmetic Optimization2");
+		int arithmeticOptimizations2 = Optimizers.arithmeticOptimizations(listOfInstructions, cpgen);
 		return negatedOptimizations + arithmeticOptimizations;// + comparisonsOptimizations; //+ dew + fwd
 	}
 
