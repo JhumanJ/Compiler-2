@@ -217,15 +217,15 @@ public class Optimizers {
         return optimizationsDone;
     }
 
-    public static int negationsOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen){
+    public static int negationsOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen) {
         int changeCounter = 0;
 
         String regExp = LOAD_INSTRUCTION_REGEXP + " (INEG|FNEG|LNEG|DNEG)";
 
         // Search for instruction list where two constants are loaded from the pool, followed by an arithmetic
-        InstructionFinder finder = new InstructionFinder(instructionList);
+        InstructionFinder finder = new InstructionFinder(listOfInstructions);
 
-        for(Iterator it = finder.search(regExp); it.hasNext();) { // Iterate through instructions to look for arithmetic optimisation
+        for (Iterator it = finder.search(regExp); it.hasNext(); ) { // Iterate through instructions to look for arithmetic optimisation
             InstructionHandle[] match = (InstructionHandle[]) it.next();
 
             //Debug output
@@ -235,25 +235,27 @@ public class Optimizers {
             InstructionHandle loadInstruction = match[0];
             InstructionHandle negationInstruction = match[1];
 
-            String type = comp207p.main.utils.Signature.getInstructionSignature(negationInstruction, cpgen);
+            String type = comp207p.main.tools.Helpers.getInstructionSignature(negationInstruction, cpgen);
 
-            Utilities.printInstructionHandles(match, cpgen, instructionList, type);
-
-            Number value = ValueLoader.getValue(loadInstruction, cpgen, instructionList, type);
+            /////////////////////////////////
+            Number value = ValueLoader.getValue(loadInstruction, cpgen, listOfInstructions, type);
 
             //Multiply by -1 to negate it, inefficient but oh well
             Number negatedValue = Utilities.foldOperation(new DMUL(), value, -1);
 
             System.out.format("Folding to value %s | Type: %s\n", negatedValue, type);
 
-            int newPoolIndex = ConstantPoolInserter.insert(negatedValue, type, cpgen);
+            int newPoolIndex = Helpers.poolInsert(negatedValue, type, cpgen);
 
             //Set left constant handle to point to new index
             ConstantPoolInserter.replaceInstructionHandleWithLoadConstant(loadInstruction, type, newPoolIndex);
 
+            /////////////////////////////////
+
+            
             //Delete other handles
             try {
-                instructionList.delete(match[1]);
+                listOfInstructions.delete(match[1]);
             } catch (TargetLostException e) {
                 e.printStackTrace();
             }
@@ -264,5 +266,5 @@ public class Optimizers {
         }
 
         return changeCounter;
-
+    }
 }
