@@ -237,7 +237,6 @@ public class Optimizers {
 
             String type = comp207p.main.tools.Helpers.getInstructionSignature(negationInstruction, cpgen);
 
-            /////////////////////////////////
             Number value;
             Instruction instruction = loadInstruction.getInstruction();
             if(instruction instanceof LoadInstruction) {
@@ -245,7 +244,6 @@ public class Optimizers {
             } else {
                 value = Helpers.constVal(loadInstruction, cpgen);
             }
-
 
             //Multiply by -1 to negate it, inefficient but oh well
             Number negatedValue = Helpers.operationFolding(new DMUL(), value, -1);
@@ -262,10 +260,6 @@ public class Optimizers {
                 LDC2_W newInstruction = new LDC2_W(newPoolIndex);
                 loadInstruction.setInstruction(newInstruction);
             }
-            
-
-            /////////////////////////////////
-
 
             //Delete other handles
             try {
