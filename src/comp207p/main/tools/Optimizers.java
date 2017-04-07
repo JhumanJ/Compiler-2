@@ -255,7 +255,14 @@ public class Optimizers {
             int newPoolIndex = Helpers.poolInsert(negatedValue, type, cpgen);
 
             //Set left constant handle to point to new index
-            ConstantPoolInserter.replaceInstructionHandleWithLoadConstant(loadInstruction, type, newPoolIndex);
+            if (type.equals("F") || type.equals("I") || type.equals("S")) { //Float, short or integer
+                LDC newInstruction = new LDC(newPoolIndex);
+                loadInstruction.setInstruction(newInstruction);
+            } else { //Types larger than integer use LDC2_W
+                LDC2_W newInstruction = new LDC2_W(newPoolIndex);
+                loadInstruction.setInstruction(newInstruction);
+            }
+            
 
             /////////////////////////////////
 
