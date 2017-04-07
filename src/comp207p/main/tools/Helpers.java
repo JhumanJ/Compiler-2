@@ -323,30 +323,28 @@ public class Helpers {
         }
     }
 
-    // ---------------------- New functions since last kristelle changes -----------------
-    // Change them as much as you can without changing the function's name (already did)
     public static int intCompar(IfInstruction comparison, Number leftValue, Number rightValue) {
-        if (comparison instanceof IF_ICMPEQ) { // if value 1 equals value 2
+        if (comparison instanceof IF_ICMPEQ) {
             if (leftValue.intValue() == rightValue.intValue()) return 1;
             else return 0;
         }
-        else if (comparison instanceof IF_ICMPGE) { // if value 1 greater than or equal to to value 2
+        else if (comparison instanceof IF_ICMPGE) {
             if (leftValue.intValue() >= rightValue.intValue()) return 1;
             else return 0;
         }
-        else if (comparison instanceof IF_ICMPGT) { // if value 1 greater than value 2
+        else if (comparison instanceof IF_ICMPGT) {
             if (leftValue.intValue() > rightValue.intValue()) return 1;
             else return 0;
         }
-        else if (comparison instanceof IF_ICMPLE) { // if value 1 less than or equal to value 2
+        else if (comparison instanceof IF_ICMPLE) {
             if (leftValue.intValue() <= rightValue.intValue()) return 1;
             else return 0;
         }
-        else if (comparison instanceof IF_ICMPLT) { // if value 1 less than value 2
+        else if (comparison instanceof IF_ICMPLT) {
             if (leftValue.intValue() < rightValue.intValue()) return 1;
             else return 0;
         }
-        else if (comparison instanceof IF_ICMPNE) { // if value 1 not equal to value 2
+        else if (comparison instanceof IF_ICMPNE) {
             if (leftValue.intValue() != rightValue.intValue()) return 1;
             else return 0;
         }
@@ -356,23 +354,23 @@ public class Helpers {
     }
 
     public static int firstCompar(InstructionHandle comparison, Number leftValue, Number rightValue) {
-        if (comparison.getInstruction() instanceof DCMPG) { //if double 1 greater than double 2
+        if (comparison.getInstruction() instanceof DCMPG) {
             if (leftValue.doubleValue() > rightValue.doubleValue()) return 1;
             else return -1;
         }
-        else if (comparison.getInstruction()  instanceof DCMPL) { //if double 1 less than double 2
+        else if (comparison.getInstruction()  instanceof DCMPL) {
             if (leftValue.doubleValue() < rightValue.doubleValue()) return -1;
             else return 1;
         }
-        else if (comparison.getInstruction()  instanceof FCMPG) { //if float 1 greater than float 2
+        else if (comparison.getInstruction()  instanceof FCMPG) {
             if (leftValue.floatValue() > rightValue.floatValue()) return 1;
             else return -1;
         }
-        else if (comparison.getInstruction()  instanceof FCMPL) { //if float 1 less than float 2
+        else if (comparison.getInstruction()  instanceof FCMPL) {
             if (leftValue.floatValue() < rightValue.floatValue()) return -1;
             else return 1;
         }
-        else if (comparison.getInstruction()  instanceof LCMP) { //long comparison, 0 if equal, 1 if long 1 greater than long 2, -1 if long 1 less than long 2
+        else if (comparison.getInstruction()  instanceof LCMP) {
             if (leftValue.longValue() == rightValue.longValue()) return 0;
             else if (leftValue.longValue() > rightValue.longValue()) return 1;
             else return -1;
@@ -383,27 +381,27 @@ public class Helpers {
     }
 
     public static int secondCompar(IfInstruction comparison, int value) {
-        if (comparison instanceof IFEQ || comparison instanceof IF_ICMPEQ) { //if equal
+        if (comparison instanceof IFEQ || comparison instanceof IF_ICMPEQ) {
             if (value == 0) return 1;
             else return 0;
         }
-        else if (comparison instanceof IFGE || comparison instanceof IF_ICMPGE) { //if greater than or equal
+        else if (comparison instanceof IFGE || comparison instanceof IF_ICMPGE) {
             if (value >= 0) return 1;
             else return 0;
         }
-        else if (comparison instanceof IFGT || comparison instanceof IF_ICMPGT) { //if greater than
+        else if (comparison instanceof IFGT || comparison instanceof IF_ICMPGT) {
             if (value > 0) return 1;
             else return 0;
         }
-        else if (comparison instanceof IFLE || comparison instanceof IF_ICMPLE) { //if less than or equal
+        else if (comparison instanceof IFLE || comparison instanceof IF_ICMPLE) {
             if (value <= 0) return 1;
             else return 0;
         }
-        else if (comparison instanceof IFLT || comparison instanceof IF_ICMPLT) { //if less than
+        else if (comparison instanceof IFLT || comparison instanceof IF_ICMPLT) {
             if (value < 0) return 1;
             else return 0;
         }
-        else if (comparison instanceof IFNE || comparison instanceof IF_ICMPNE) { //if not equal
+        else if (comparison instanceof IFNE || comparison instanceof IF_ICMPNE) {
             if (value != 0) return 1;
             else return 0;
         }
