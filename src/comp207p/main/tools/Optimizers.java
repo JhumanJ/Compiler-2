@@ -105,6 +105,10 @@ public class Optimizers {
             Number firstVal = 0, secundVal = 0;
             InstructionHandle firstInstruct = null, secundInstruct = null, compare = null, comparInstruc = null;
 
+            if (found[1].getInstruction() instanceof InvokeInstruction ) {
+                continue;
+            }
+
             firstInstruct = found[0];
             if (found[1].getInstruction() instanceof ConversionInstruction
                 && !(found[2].getInstruction() instanceof IfInstruction)) {
@@ -132,7 +136,7 @@ public class Optimizers {
                     foundCounter = -1;
                 }
             }
-
+////////////////////
             if (found[2+foundCounter].getInstruction() instanceof IfInstruction) { //If the following instruction after left and right is an IfInstruction (meaning integer comparison), such as IF_ICMPGE
                 comparInstruc = found[2+foundCounter];
             } else {
@@ -162,6 +166,7 @@ public class Optimizers {
                     }
                 }
             } catch (UnableToFetchValueException e) {continue;}
+////////
 
             IfInstruction comparison = (IfInstruction) comparInstruc.getInstruction();
 
