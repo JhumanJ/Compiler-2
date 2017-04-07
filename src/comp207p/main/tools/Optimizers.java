@@ -238,7 +238,13 @@ public class Optimizers {
             String type = comp207p.main.tools.Helpers.getInstructionSignature(negationInstruction, cpgen);
 
             /////////////////////////////////
-            Number value = ValueLoader.getValue(loadInstruction, cpgen, listOfInstructions, type);
+            Instruction instruction = loadInstruction.getInstruction();
+            if(instruction instanceof LoadInstruction) {
+                Number value = Helpers.loadInstructVal(loadInstruction, cpgen, listOfInstructions, type);
+            } else {
+                Number value = Helpers.constVal(loadInstruction, cpgen);
+            }
+
 
             //Multiply by -1 to negate it, inefficient but oh well
             Number negatedValue = Utilities.foldOperation(new DMUL(), value, -1);
@@ -252,7 +258,7 @@ public class Optimizers {
 
             /////////////////////////////////
 
-            
+
             //Delete other handles
             try {
                 listOfInstructions.delete(match[1]);
