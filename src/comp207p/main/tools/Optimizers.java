@@ -9,8 +9,6 @@ import comp207p.main.exceptions.UnableToFetchValueException;
 
 public class Optimizers {
 
-    //TODO: delete comments
-
     private static final String LOAD_INSTRUCTION_REGEXP = "(ConstantPushInstruction|LDC|LDC2_W|LoadInstruction)";
 
     public static int arithmeticOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen) {
@@ -27,13 +25,11 @@ public class Optimizers {
             InstructionHandle firstInstruct, secundInstruct, operationInstruc;
 
             firstInstruct = found[0];
-            //Init secundinstruct
             if (found[1].getInstruction() instanceof ConversionInstruction) {
                 secundInstruct = found[2];
             } else {
                 secundInstruct = found[1];
             }
-            //init operation
             if (secundInstruct == found[2] && found[3].getInstruction() instanceof ConversionInstruction) {
                 operationInstruc = found[4];
             } else if (secundInstruct == found[2] || (secundInstruct == found[1] && found[2].getInstruction() instanceof ConversionInstruction)) {
@@ -42,7 +38,6 @@ public class Optimizers {
                 operationInstruc = found[2];
             }
 
-            // TODO: can these two blocks be deleted?
             if (firstInstruct.getInstruction() instanceof LoadInstruction) {
                 if (Helpers.ifCheck(firstInstruct, listOfInstructions) || Helpers.loopCheck(firstInstruct, listOfInstructions)) {
                     continue;
@@ -136,9 +131,8 @@ public class Optimizers {
                     foundCounter = -1;
                 }
             }
-////////////////////
 
-            if (firstInstruct.getInstruction() instanceof LoadInstruction) { //Recognise for loops
+            if (firstInstruct.getInstruction() instanceof LoadInstruction) {
                 if (Helpers.checkDynamicVariable(firstInstruct, listOfInstructions)) {
                     continue;
                 }
@@ -149,11 +143,11 @@ public class Optimizers {
                 }
             }
 
-            if (found[2+foundCounter].getInstruction() instanceof IfInstruction) { //If the following instruction after left and right is an IfInstruction (meaning integer comparison), such as IF_ICMPGE
+            if (found[2+foundCounter].getInstruction() instanceof IfInstruction) {
                 comparInstruc = found[2+foundCounter];
             } else {
-                compare = found[2+foundCounter]; //Comparison for non-integers, such as LCMP
-                comparInstruc = found[3+foundCounter]; //IfInstruction
+                compare = found[2+foundCounter];
+                comparInstruc = found[3+foundCounter];
             }
 
             String actualInstructionType;
@@ -178,7 +172,6 @@ public class Optimizers {
                     }
                 }
             } catch (UnableToFetchValueException e) {continue;}
-////////
 
             IfInstruction comparison = (IfInstruction) comparInstruc.getInstruction();
 
@@ -227,7 +220,7 @@ public class Optimizers {
 
             }
 
-            optimizationsDone++; //Optimisation found
+            optimizationsDone++;
             break;
         }
 
@@ -235,19 +228,14 @@ public class Optimizers {
     }
 
     public static int negationsOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen) {
-        int changeCounter = 0;
+        int optimizationsDone = 0;
 
         String regExp = LOAD_INSTRUCTION_REGEXP + " (INEG|FNEG|LNEG|DNEG)";
 
-        // Search for instruction list where two constants are loaded from the pool, followed by an arithmetic
         InstructionFinder finder = new InstructionFinder(listOfInstructions);
 
-        for (Iterator it = finder.search(regExp); it.hasNext(); ) { // Iterate through instructions to look for arithmetic optimisation
+        for (Iterator it = finder.search(regExp); it.hasNext(); ) {
             InstructionHandle[] match = (InstructionHandle[]) it.next();
-
-            //Debug output
-            System.out.println("==================================");
-            System.out.println("Found optimisable negation");
 
             InstructionHandle loadInstruction = match[0];
             InstructionHandle negationInstruction = match[1];
@@ -262,34 +250,26 @@ public class Optimizers {
                 value = Helpers.constVal(loadInstruction, cpgen);
             }
 
-            //Multiply by -1 to negate it, inefficient but oh well
             Number negatedValue = Helpers.operationFolding(new DMUL(), value, -1);
-
-            System.out.format("Folding to value %s | Type: %s\n", negatedValue, type);
 
             int newPoolIndex = Helpers.poolInsert(negatedValue, type, cpgen);
 
-            //Set left constant handle to point to new index
-            if (type.equals("F") || type.equals("I") || type.equals("S")) { //Float, short or integer
+            if (type.equals("F") || type.equals("I") || type.equals("S")) {
                 LDC newInstruction = new LDC(newPoolIndex);
                 loadInstruction.setInstruction(newInstruction);
-            } else { //Types larger than integer use LDC2_W
+            } else {
                 LDC2_W newInstruction = new LDC2_W(newPoolIndex);
                 loadInstruction.setInstruction(newInstruction);
             }
 
-            //Delete other handles
             try {
                 listOfInstructions.delete(match[1]);
             } catch (TargetLostException e) {
                 e.printStackTrace();
             }
-
-            System.out.println("==================================");
-            changeCounter++;
-
+            optimizationsDone++;
         }
 
-        return changeCounter;
+        return optimizationsDone;
     }
 }
