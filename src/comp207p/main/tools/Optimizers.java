@@ -218,67 +218,51 @@ public class Optimizers {
     }
 
     public static int negationsOptimizations(InstructionList listOfInstructions, ConstantPoolGen cpgen){
-		int optimizationsDone = 0;
+        int changeCounter = 0;
 
-		String regex = LOAD_INSTRUCTION_REGEXP + " (INEG|FNEG|LNEG|DNEG)";
+        String regExp = LOAD_INSTRUCTION_REGEXP + " (INEG|FNEG|LNEG|DNEG)";
 
-		InstructionFinder searcher = new InstructionFinder(listOfInstructions);
-		for (Iterator iterate = searcher.search(regex); iterate.hasNext();){
-			InstructionHandle[] match = (InstructionHandle[]) iterate.next();
-			InstructionHandle loadedInstruction = match[0];
-            InstructionHandle negatedInstruction = match[1];
+        // Search for instruction list where two constants are loaded from the pool, followed by an arithmetic
+        InstructionFinder finder = new InstructionFinder(instructionList);
 
-			Instruction actualInstruction = negatedInstruction.getInstruction();
-	        if(!(actualInstruction instanceof TypedInstruction)) {
-	            throw new RuntimeException("actualInstruction does not have a TypedInstruction type.");
-	        }
+        for(Iterator it = finder.search(regExp); it.hasNext();) { // Iterate through instructions to look for arithmetic optimisation
+            InstructionHandle[] match = (InstructionHandle[]) it.next();
 
-	        if(actualInstruction instanceof LoadInstruction) {
-	            int index = ((LocalVariableInstruction) actualInstruction).getIndex();
-                InstructionHandle handleIterator = negatedInstruction;
+            //Debug output
+            System.out.println("==================================");
+            System.out.println("Found optimisable negation");
 
-                while (!(actualInstruction instanceof StoreInstruction) || ((StoreInstruction) actualInstruction).getIndex() != index) {
-	                handleIterator = handleIterator.getPrev();
-	                actualInstruction = handleIterator.getInstruction();
-	            }
+            InstructionHandle loadInstruction = match[0];
+            InstructionHandle negationInstruction = match[1];
 
-	            handleIterator = handleIterator.getPrev();
-	            actualInstruction = handleIterator.getInstruction();
-	        }
+            String type = comp207p.main.utils.Signature.getInstructionSignature(negationInstruction, cpgen);
 
-            String actualInstructionType = ((TypedInstruction)actualInstruction).getType(cpgen).getSignature();
+            Utilities.printInstructionHandles(match, cpgen, instructionList, type);
 
-            Number value,negatedValue;
+            Number value = ValueLoader.getValue(loadInstruction, cpgen, instructionList, type);
 
-            if(actualInstruction instanceof LoadInstruction) {
-                value = Helpers.loadInstructVal(negatedInstruction, cpgen, listOfInstructions, actualInstructionType);
-            } else {
-                value = Helpers.constVal(negatedInstruction, cpgen);
-            }
+            //Multiply by -1 to negate it, inefficient but oh well
+            Number negatedValue = Utilities.foldOperation(new DMUL(), value, -1);
 
-            negatedValue = (double)-1.0 * (double)value;
-            int newPoolIndex = Helpers.poolInsert(negatedValue, actualInstructionType, cpgen);
+            System.out.format("Folding to value %s | Type: %s\n", negatedValue, type);
 
-            if (actualInstructionType.equals("F") || actualInstructionType.equals("I") || actualInstructionType.equals("S")){
-                LDC newInstruct = new LDC(newPoolIndex);
-                loadedInstruction.setInstruction(newInstruct);
-            } else {
-                LDC2_W newInstruct = new LDC2_W(newPoolIndex);
-                loadedInstruction.setInstruction(newInstruct);
-            }
+            int newPoolIndex = ConstantPoolInserter.insert(negatedValue, type, cpgen);
 
+            //Set left constant handle to point to new index
+            ConstantPoolInserter.replaceInstructionHandleWithLoadConstant(loadInstruction, type, newPoolIndex);
+
+            //Delete other handles
             try {
-                listOfInstructions.delete(match[1]);
+                instructionList.delete(match[1]);
+            } catch (TargetLostException e) {
+                e.printStackTrace();
             }
-            catch (TargetLostException e){}
 
-            optimizationsDone++;
-		}
+            System.out.println("==================================");
+            changeCounter++;
 
+        }
 
-
-
-		return optimizationsDone;
-	}
+        return changeCounter;
 
 }

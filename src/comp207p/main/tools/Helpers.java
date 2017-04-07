@@ -233,8 +233,7 @@ public class Helpers {
             throw new RuntimeException("Error");
         }
     }
-
-
+    
 
     public static String foldConstSign(InstructionHandle l, InstructionHandle r, ConstantPoolGen constpoolgen) {
 
