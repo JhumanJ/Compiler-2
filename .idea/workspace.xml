@@ -1,142 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="796657d6-1c89-466a-94dd-7975863c6a63" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/AConditional.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/BitShifting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/BreakForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/ComplexForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/ConversionInstruction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/ForLoopIncrement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/FunctionDependency.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/IfBranches.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/IfFor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/LongLong.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/Modulo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/NestedIfs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/NestedLoops.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/SimpleIf.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/SuperComplexForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/Switch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/TernaryOperator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/comp207p/target/WhileLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/AConditionalTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/BitShiftingTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/BreakForLoopTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/ComplexForLoopTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/ConversionInstructionTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/ForLoopIncrementTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/FunctionDependencyTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/IfBranchesTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/IfForTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/LongLongTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/ModuloTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/NestedIfsTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/NestedLoopsTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/SimpleIfTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/SuperComplexForLoopTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/SwitchTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/TernaryOperatorTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/test/comp207p/target/WhileLoopTest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/AConditional.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/BitShifting.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/BreakForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/ComplexForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/ConversionInstruction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/ForLoopIncrement.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/FunctionDependency.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/IfBranches.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/IfFor.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/LongLong.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/Modulo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/NestedIfs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/NestedLoops.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/SimpleIf.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/SuperComplexForLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/Switch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/TernaryOperator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/optimised/classes/comp207p/target/WhileLoop.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/AConditional.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/BitShifting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/BreakForLoop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/ComplexForLoop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/ConversionInstruction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/ForLoopIncrement.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/FunctionDependency.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/IfBranches.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/IfFor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/LongLong.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/Modulo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/NestedIfs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/NestedLoops.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/SimpleIf.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/SuperComplexForLoop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/Switch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/TernaryOperator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/comp207p/target/WhileLoop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.AConditionalTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.BitShiftingTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.BreakForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ComplexForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ConversionInstructionTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ForLoopIncrementTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.FunctionDependencyTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.IfBranchesTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.IfForTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.LongLongTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ModuloTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.NestedIfsTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.NestedLoopsTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.SimpleIfTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.SuperComplexForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.SwitchTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.TernaryOperatorTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.WhileLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.AConditionalTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.BitShiftingTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.BreakForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ComplexForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ConversionInstructionTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ForLoopIncrementTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.FunctionDependencyTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.IfBranchesTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.IfForTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.LongLongTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ModuloTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.NestedIfsTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.NestedLoopsTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.SimpleIfTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.SuperComplexForLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.SwitchTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.TernaryOperatorTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.WhileLoopTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/AConditionalTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/BitShiftingTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/BreakForLoopTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/ComplexForLoopTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/ConversionInstructionTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/ForLoopIncrementTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/FunctionDependencyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/IfBranchesTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/IfForTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/LongLongTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/ModuloTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/NestedIfsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/NestedLoopsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/SimpleIfTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/SuperComplexForLoopTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/SwitchTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/TernaryOperatorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/comp207p/target/WhileLoopTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/comp207p/main/ConstantFolder.class" afterPath="$PROJECT_DIR$/build/classes/comp207p/main/ConstantFolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/comp207p/main/ConstantFolder.java" afterPath="$PROJECT_DIR$/src/comp207p/main/ConstantFolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ConstantVariableFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.ConstantVariableFoldingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.DynamicVariableFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.DynamicVariableFoldingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.SimpleFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/optimised/TEST-comp207p.target.SimpleFoldingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ConstantVariableFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.ConstantVariableFoldingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.DynamicVariableFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.DynamicVariableFoldingTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.SimpleFoldingTest.txt" afterPath="$PROJECT_DIR$/test-reports/original/TEST-comp207p.target.SimpleFoldingTest.txt" />
-    </list>
+    <list default="true" id="796657d6-1c89-466a-94dd-7975863c6a63" name="Default" comment="" />
     <ignored path="Java-Compiler-Optimiser.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -183,8 +48,8 @@
       <file leaf-file-name="DynamicVariableFolding.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/comp207p/target/DynamicVariableFolding.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.060344826">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.8448276">
+              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -487,12 +352,12 @@
       <created>1491331029187</created>
       <option name="number" value="Default" />
       <updated>1491331029187</updated>
-      <workItem from="1491331032113" duration="1168000" />
+      <workItem from="1491331032113" duration="1435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1168000" />
+    <option name="totallyTimeSpent" value="1435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="725" extended-state="0" />
@@ -586,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/comp207p/target/DynamicVariableFolding.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.060344826">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.8448276">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
           <folding />
         </state>
       </provider>
