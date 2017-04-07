@@ -391,4 +391,14 @@ public class Helpers {
             throw new RuntimeException("Comparison not defined, got: " + comparison.getClass());
         }
     }
+
+    public static boolean checkDynamicVariable(InstructionHandle h, InstructionList list) {
+        if (ifCheck(h, list) || loopCheck(h, list)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }

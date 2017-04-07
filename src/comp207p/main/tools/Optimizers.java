@@ -137,6 +137,18 @@ public class Optimizers {
                 }
             }
 ////////////////////
+
+            if (firstInstruct.getInstruction() instanceof LoadInstruction) { //Recognise for loops
+                if (Helpers.checkDynamicVariable(firstInstruct, listOfInstructions)) {
+                    continue;
+                }
+            }
+            if (secundInstruct != null && secundInstruct.getInstruction() instanceof LoadInstruction) {
+                if (Helpers.checkDynamicVariable(secundInstruct, listOfInstructions)) {
+                    continue;
+                }
+            }
+
             if (found[2+foundCounter].getInstruction() instanceof IfInstruction) { //If the following instruction after left and right is an IfInstruction (meaning integer comparison), such as IF_ICMPGE
                 comparInstruc = found[2+foundCounter];
             } else {
