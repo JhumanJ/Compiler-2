@@ -238,16 +238,17 @@ public class Optimizers {
             String type = comp207p.main.tools.Helpers.getInstructionSignature(negationInstruction, cpgen);
 
             /////////////////////////////////
+            Number value;
             Instruction instruction = loadInstruction.getInstruction();
             if(instruction instanceof LoadInstruction) {
-                Number value = Helpers.loadInstructVal(loadInstruction, cpgen, listOfInstructions, type);
+                value = Helpers.loadInstructVal(loadInstruction, cpgen, listOfInstructions, type);
             } else {
-                Number value = Helpers.constVal(loadInstruction, cpgen);
+                value = Helpers.constVal(loadInstruction, cpgen);
             }
 
 
             //Multiply by -1 to negate it, inefficient but oh well
-            Number negatedValue = Utilities.foldOperation(new DMUL(), value, -1);
+            Number negatedValue = Helpers.operationFolding(new DMUL(), value, -1);
 
             System.out.format("Folding to value %s | Type: %s\n", negatedValue, type);
 
